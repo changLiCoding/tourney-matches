@@ -1,12 +1,20 @@
 import React from "react"; //optional
 import Match from "./Match";
-import matchData from "../data/matchData";
 
-function MatchList() {
+function MatchList(props) {
+	const { matchData } = props;
 	return (
 		<section className='PlayerList MatchList'>
 			<h1>Match list</h1>
-			<Match />
+			{matchData.map((ele, i) => {
+				return (
+					<Match
+						{...ele}
+						key={i}
+					/>
+				);
+			})}
+			{/* <Match {...matchData[0]} /> */}
 		</section>
 	);
 }
