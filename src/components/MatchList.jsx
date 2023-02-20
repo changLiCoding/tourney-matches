@@ -10,7 +10,7 @@ function MatchList(props) {
 				return (
 					<Match
 						{...ele}
-						key={i}
+						key={ele.matchNumber}
 					/>
 				);
 			})}
